@@ -6,6 +6,7 @@ enum HidSubmenuIndex {
     HidSubmenuIndexKeynoteVertical,
     HidSubmenuIndexKeyboard,
     HidSubmenuIndexMedia,
+    HidSubmenuIndexAtv,
     HidSubmenuIndexTikTok,
     HidSubmenuIndexMouse,
     HidSubmenuIndexMouseClicker,
@@ -33,6 +34,8 @@ void hid_scene_start_on_enter(void* context) {
         app->submenu, "Keyboard", HidSubmenuIndexKeyboard, hid_scene_start_submenu_callback, app);
     submenu_add_item(
         app->submenu, "Media", HidSubmenuIndexMedia, hid_scene_start_submenu_callback, app);
+    submenu_add_item(
+        app->submenu, "ATV", HidSubmenuIndexAtv, hid_scene_start_submenu_callback, app);
     submenu_add_item(
         app->submenu, "Mouse", HidSubmenuIndexMouse, hid_scene_start_submenu_callback, app);
 #ifdef HID_TRANSPORT_BLE
@@ -93,6 +96,9 @@ bool hid_scene_start_on_event(void* context, SceneManagerEvent event) {
                 break;
             case HidSubmenuIndexMedia:
                 view_id = HidViewMedia;
+                break;
+            case HidSubmenuIndexAtv:
+                view_id = HidViewAtv;
                 break;
             case HidSubmenuIndexTikTok:
                 view_id = BtHidViewTikTok;

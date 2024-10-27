@@ -97,6 +97,11 @@ Hid* hid_alloc() {
     app->hid_media = hid_media_alloc(app);
     view_dispatcher_add_view(
         app->view_dispatcher, HidViewMedia, hid_media_get_view(app->hid_media));
+    
+    // Atv View
+    app->hid_atv = hid_atv_alloc(app);
+    view_dispatcher_add_view(
+        app->view_dispatcher, HidViewAtv, hid_atv_get_view(app-> hid_atv));
 
     // TikTok view
     app->hid_tiktok = hid_tiktok_alloc(app);
