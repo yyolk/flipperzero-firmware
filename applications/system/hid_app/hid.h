@@ -21,6 +21,7 @@
 #include "views/hid_keynote.h"
 #include "views/hid_keyboard.h"
 #include "views/hid_media.h"
+#include "views/hid_atv.h"
 #include "views/hid_mouse.h"
 #include "views/hid_mouse_clicker.h"
 #include "views/hid_mouse_jiggler.h"
@@ -45,6 +46,7 @@ struct Hid {
     HidKeynote* hid_keynote;
     HidKeyboard* hid_keyboard;
     HidMedia* hid_media;
+    HidAtv* hid_atv;
     HidMouse* hid_mouse;
     HidMouseClicker* hid_mouse_clicker;
     HidMouseJiggler* hid_mouse_jiggler;
